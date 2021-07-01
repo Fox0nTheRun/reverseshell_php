@@ -13,6 +13,7 @@ while ($socket && $connection){
 	
 	$read = false;
 	while($read == false){
+	// Change the 3rd value to modify the data length to be received
 	$read = socket_recv($socket, $data, 1024, MSG_DONTWAIT);
 	}
 	$data = trim(utf8_decode($data));
